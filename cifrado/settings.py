@@ -7,20 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Configuración de archivos estáticos
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Carpeta donde se recogerán los archivos estáticos
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Carpeta donde están los archivos estáticos originales
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  
 
-# Agregar whitenoise para servir archivos estáticos en producción
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Whitenoise debe estar aquí
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
 
 # Configuración para servir archivos estáticos con WhiteNoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -35,6 +24,7 @@ SECRET_KEY = 'django-insecure-xow7(h4q&*6s+5@km@8#86fhs&gzb@rdjzous4r42zz(rq7kqj
 DEBUG = False
 
 ALLOWED_HOSTS = ['cifradodjango.onrender.com']
+
 
 
 # Application definition
