@@ -1,0 +1,60 @@
+/* estilos.css */
+
+body {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+}
+
+.results-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px; /* Asegura que el contenedor no sea demasiado ancho */
+    margin: 0 auto; /* Centra el contenedor */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombras para darle estilo */
+    color: #000; /* Texto negro dentro del contenedor blanco */
+}
+
+h2 {
+    color: #00FF85; /* Verde */
+    font-size: 24px;
+    text-align: left;
+}
+
+.result-block {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    word-wrap: break-word; /* Para evitar que el texto largo se salga del contenedor */
+}
+
+p {
+    margin: 10px 0;
+}
+
+.decrypt-btn {
+    background-color: #00CFFF;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.decrypt-btn:hover {
+    background-color: #009FCC;
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .results-container {
+        width: 90%; /* Para que se ajuste mejor en pantallas pequeñas */
+    }
+}

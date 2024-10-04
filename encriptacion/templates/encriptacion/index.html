@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado de Datos Sensibles</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Cifrado de Datos Sensibles</h1>
+        <p>Completa el formulario para cifrar tus datos y protegerlos con nuestras herramientas de encriptación avanzadas.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            <div class="button-group">
+                <button type="submit" class="submit-btn">Enviar</button>
+                <!-- Botón con enlace a una página externa -->
+                <a href="https://al3j4ndro17.github.io" class="react-btn" target="_blank">Miralo en React</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

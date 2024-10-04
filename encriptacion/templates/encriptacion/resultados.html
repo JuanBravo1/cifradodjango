@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Cifrado</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="results-container">
+        <h2>Resultados del Cifrado</h2>
+
+        <div class="result-block">
+            <p><strong>Nombre Cifrado (RC4):</strong> {{ nombre_cifrado }}</p>
+            <p><strong>Clave RC4 (Nombre):</strong> {{ key_rc4_nombre }}</p>
+        </div>
+
+        <div class="result-block">
+            <p><strong>Tarjeta de Crédito Cifrada (RC4):</strong> {{ tarjeta_cifrada }}</p>
+            <p><strong>Clave RC4 (Tarjeta):</strong> {{ key_rc4_tarjeta }}</p>
+        </div>
+
+        <div class="result-block">
+            <p><strong>Firma de la Dirección (ECDSA):</strong> {{ firma_direccion }}</p>
+            <p><strong>Clave Pública (ECDSA):</strong> {{ clave_publica_direccion }}</p>
+        </div>
+
+        <div class="result-block">
+            <p><strong>Contraseña Hasheada (Whirlpool):</strong> {{ password_hashed }}</p>
+        </div>
+
+        <!-- Botón para desencriptar -->
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="nombre_cifrado" value="{{ nombre_cifrado }}">
+            <input type="hidden" name="tarjeta_cifrada" value="{{ tarjeta_cifrada }}">
+            <input type="hidden" name="key_rc4_nombre" value="{{ key_rc4_nombre }}">
+            <input type="hidden" name="key_rc4_tarjeta" value="{{ key_rc4_tarjeta }}">
+            <input type="hidden" name="firma_direccion" value="{{ firma_direccion }}">
+            <input type="hidden" name="clave_publica_direccion" value="{{ clave_publica_direccion }}">
+            <input type="hidden" name="password_hashed" value="{{ password_hashed }}">
+        
+            <button type="submit" name="desencriptar" class="decrypt-btn">Desencriptar</button>
+        </form>
+        
+    </div>
+</body>
+</html>
